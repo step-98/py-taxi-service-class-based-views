@@ -3,12 +3,17 @@
 {% block content %}
   <h1>Manufacturer List</h1>
   {% if manufacturer_list %}
-    <ul>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
       {% for manufacturer in manufacturer_list %}
-        <li>
-          <a href="#">{{ manufacturer.name }} ({{ manufacturer.country }})</a>
-        </li>
+        <tr>
+          <th><a href="#">{{ manufacturer.name }}</a></th>
+          <th>{{ manufacturer.country }}</th>
+        </tr>
       {% endfor %}
-    </ul>
+    </table>
   {% endif %}
 {% endblock %}
